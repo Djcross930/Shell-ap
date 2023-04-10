@@ -31,12 +31,9 @@ class OnThisDayCommandTest {
     void testEvents() {
         int month = 3;
         int day = 1;
-        String expectedResponse = "{\"events\": [\"sample event\"]}";
-
-        Mockito.lenient().when(restTemplate.getForObject(any(String.class), eq(String.class))).thenReturn(expectedResponse);
 
         String actualResponse = onThisDayCommand.events(month, day);
-
+        System.out.println(actualResponse);
         assertNotNull(actualResponse, "The response should not be null");
     }
 }
